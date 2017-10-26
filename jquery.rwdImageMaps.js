@@ -27,6 +27,13 @@
 						w = $that.attr(attrW),
 						h = $that.attr(attrH);
 
+					if (w && w.match(/\%/)) {
+						w = null;
+					}
+					if (h && h.match(/\%/)) {
+						h = null;
+					}
+
 					if (!w || !h) {
 						var temp = new Image();
 						temp.src = $that.attr('src');
